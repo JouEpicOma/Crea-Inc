@@ -1,23 +1,23 @@
-function triggerCardAnimation(cardName) {
+function triggerCardAnimation(ErnestHawks) {
     const animationPopup = document.createElement('div');
     animationPopup.classList.add('card-popup');
     animationPopup.innerHTML = `
         <div class="card-reveal">
-            <img src="cards/${cardName}.png" alt="${cardName}" class="card-image">
+            <img src="cards/${ErnestHawks}.png" alt="${ErnestHawks}" class="card-image">
             <br>
-            <button onclick="claimCard('${cardName}')">Claim Card</button>
+            <button onclick="claimCard('${ErnestHawks}')">Claim Card</button>
         </div>
     `;
     document.body.appendChild(animationPopup);
 }
 
-function claimCard(cardName) {
+function claimCard(ErnestHawks) {
     let collectedCards = JSON.parse(localStorage.getItem('collectedCards')) || [];
-    if (!collectedCards.includes(cardName)) {
-        collectedCards.push(cardName);
-        localStorage.setItem('collectedCards', JSON.stringify(collectedCards));
+    if (!collectedCards.includes(ErnestHawks)) {
+        collectedCards.push(ErnestHawks);
+        localStorage.setItem('collectedCards', JSON.stringify(ErnestHawks));
     }
-    alert(`You've collected the ${cardName} card!`);
+    alert(`You've collected the ${ErnestHawks} card!`);
     document.querySelector('.card-popup').remove();
 }
 
